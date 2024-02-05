@@ -1,0 +1,4 @@
+[2024-02-05 13:34:30,184][accelerate.commands.launch][WARNING] - The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_cpu_threads_per_process` was set to `40` to improve out-of-box performance when training on CPUs
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+[2024-02-05 13:34:30,217][root][INFO] - Using nproc_per_node=2.

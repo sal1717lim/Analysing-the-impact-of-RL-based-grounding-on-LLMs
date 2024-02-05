@@ -1,0 +1,6 @@
+- rl_script_args.path=/home/aissi/Analysing-the-impact-of-RL-based-grounding-on-LLMs/Evaluations/Zero_shot/zero_shot.py
+- rl_script_args.output_dir=.
+- lamorel_args.accelerate_args.machine_rank=0
+- lamorel_args.llm_args.model_name=google/flan-t5-small
+- lamorel_args.llm_args.model_path=google/flan-t5-small
+- lamorel_args.llm_args.prompt_number=9

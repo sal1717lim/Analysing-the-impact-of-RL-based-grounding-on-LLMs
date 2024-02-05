@@ -1,0 +1,3 @@
+export http_proxy=http://"192.168.0.100":"3128"
+export https_proxy=http://"192.168.0.100":"3128"
+python3 -m lamorel_launcher.launch --config-path "/home/aissi/Analysing-the-impact-of-RL-based-grounding-on-LLMs/Evaluations/Zero_shot/configs" --config-name "local_gpu_config"        rl_script_args.path="/home/aissi/Analysing-the-impact-of-RL-based-grounding-on-LLMs/Evaluations/Zero_shot/zero_shot.py" rl_script_args.output_dir="." lamorel_args.accelerate_args.machine_rank=0 lamorel_args.llm_args.model_name="google/flan-t5-large" lamorel_args.llm_args.model_path="google/flan-t5-large" lamorel_args.llm_args.prompt_number=9

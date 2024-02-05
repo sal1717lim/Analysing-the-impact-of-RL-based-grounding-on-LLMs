@@ -1,0 +1,63 @@
+lamorel_args:
+  log_level: info
+  allow_subgraph_use_whith_gradient: false
+  distributed_setup_args:
+    n_rl_processes: 1
+    n_llm_processes: 1
+  accelerate_args:
+    config_file: ../configs/accelerate/default_config.yaml
+    machine_rank: 0
+    main_process_ip: localhost
+    num_machines: 1
+  llm_args:
+    model_type: seq2seq
+    model_path: google/flan-t5-large
+    prompt_number: 9
+    model_name: google/flan-t5-large
+    pretrained: true
+    minibatch_size: 192
+    pre_encode_inputs: true
+    load_in_4bit: false
+    parallelism:
+      use_gpu: false
+      model_parallelism_size: 1
+      synchronize_gpus_after_scoring: false
+      empty_cuda_cache_after_scoring: false
+rl_script_args:
+  path: /home/aissi/Analysing-the-impact-of-RL-based-grounding-on-LLMs/Evaluations/Zero_shot/zero_shot.py
+  seed: 1
+  ppo_epochs: 1
+  lam: 0.99
+  gamma: 0.99
+  lr: 0.0001
+  entropy_coef: 0.01
+  value_loss_coef: 0.5
+  clip_eps: 0.2
+  max_grad_norm: 0.5
+  minibatch_size: 8
+  use_all_params_for_optim: false
+  quantized_optimizer: false
+  use_lora: false
+  gradient_batch_size: 1
+  gradient_minibatch_size: null
+  lora_r: 16
+  lora_alpha: 32
+  number_envs: 1
+  max_ep_len: 20
+  epochs: 1000
+  steps_per_epoch: 1000
+  save_freq: 100
+  output_dir: .
+  loading_path: C:\Users\salim\Documents\Large-Scale_Grounding_LLMs_with_Online_RL
+  transitions_buffer_len: 3
+  name_environment: babyai_text
+  task: BabyAI-GoToLocal-v0
+  action_space:
+  - turn_left
+  - turn_right
+  - go_forward
+  - pick_up
+  - drop
+  - toggle
+  config_file: /home/cromac/Documents/Projects/PhD/Grounding_LLMs/alfworld/configs/base_config.yaml
+  train_mode: true

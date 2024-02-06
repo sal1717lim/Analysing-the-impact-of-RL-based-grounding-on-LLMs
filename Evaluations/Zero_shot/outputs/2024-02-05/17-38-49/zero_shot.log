@@ -1,0 +1,9 @@
+[2024-02-05 17:39:09,647][lamorel_logger][INFO] - Init rl group for process 1
+[2024-02-05 17:39:09,647][lamorel_logger][INFO] - Init llm group for process 1
+[2024-02-05 17:39:09,652][lamorel_logger][INFO] - Init rl-llm group for process 1
+[2024-02-05 17:39:09,661][lamorel_logger][INFO] - Init rl group for process 0
+[2024-02-05 17:39:09,665][lamorel_logger][INFO] - Init llm group for process 0
+[2024-02-05 17:39:09,665][lamorel_logger][INFO] - Init rl-llm group for process 0
+[2024-02-05 17:39:09,668][lamorel_logger][INFO] - Devices on process 1 (index 0): [0]
+[2024-02-05 17:39:15,602][lamorel_logger][INFO] - Launching LLM server process 1
+[2024-02-05 17:39:20,039][lamorel_logger][INFO] - Closing LLM server process 1

@@ -416,9 +416,12 @@ def main(config_args):
     
     limite=0
     reussis=0
+    if not os.path.exists("/home/aissi/Analysing-the-impact-of-RL-based-grounding-on-LLMs/Evaluations/Zero_shot/outputss"):
+        os.mkdir("/home/aissi/Analysing-the-impact-of-RL-based-grounding-on-LLMs/Evaluations/Zero_shot/outputss")
+    data={}
     for limite in tqdm(range(nombre_episode)):
             d=False
-            
+            _tmp={}
             step=0
             list_actions=[]
             while not d:
@@ -449,11 +452,22 @@ def main(config_args):
                 list_actions.append(actions_command[0])
                 
                 step+=1
+                _tmp[str(step)]={
+                    "text":prompts[0],
+                    "action":actions_command[0],
+                    "bot":str(action)
+                }
             
             if r[0]!=0:# si l'episodes est terminé ou bien on a atteint la limite de l'episode
                 
                 reussis+=1
                 print(r,reussis)
+            data[str(limite)]=_tmp
+    json_object = json.dumps(data, indent=4)
+ 
+# Writing to sample.json
+    with open("/home/aissi/Analysing-the-impact-of-RL-based-grounding-on-LLMs/Evaluations/Zero_shot/outputss/template"+str(prompt_number)+".json", "w") as outfile:
+        outfile.write(json_object)
     
     
     

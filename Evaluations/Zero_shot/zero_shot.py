@@ -421,7 +421,8 @@ def main(config_args):
     data={}
     for limite in tqdm(range(nombre_episode)):
             d=False
-            _tmp={}
+            _tmp={"reward":False,"episodes":{}}
+
             step=0
             list_actions=[]
             while not d:
@@ -452,7 +453,7 @@ def main(config_args):
                 list_actions.append(actions_command[0])
                 
                 step+=1
-                _tmp[str(step)]={
+                _tmp["episodes"][str(step)]={
                     "text":prompts[0],
                     "action":actions_command[0],
                     "bot":str(action)
@@ -460,9 +461,12 @@ def main(config_args):
             
             if r[0]!=0:# si l'episodes est terminé ou bien on a atteint la limite de l'episode
                 
+                
                 reussis+=1
                 print(r,reussis)
+                _tmp["reward"]=True
             data[str(limite)]=_tmp
+            
     json_object = json.dumps(data, indent=4)
  
 # Writing to sample.json

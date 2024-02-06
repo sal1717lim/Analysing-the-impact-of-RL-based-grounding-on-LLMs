@@ -87,6 +87,9 @@ def pick_a_prompt(past_transitions, obs, info,past_actions=[],prompt_number=0,st
     elif prompt_number==5:
         prompt=generate_prompt(past_transitions,obs,info)
         prompt=prompt_template5(prompt,steps)
+    elif prompt_number==6:
+        prompt=generate_prompt(past_transitions,obs,info)
+        prompt=prompt_template6(prompt)
         return prompt
     elif prompt_number==7:
         prompt=prompt_template7(past_transitions,obs,info)
